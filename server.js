@@ -60,6 +60,7 @@ app.use(session({
 }));
 
 app.use((req, res, next) => {
+  if (req.path === '/health') return next();
   if (!req.session.csrfToken) req.session.csrfToken = crypto.randomBytes(32).toString('hex');
   res.locals.csrfToken = req.session.csrfToken;
   if (req.method === 'POST') {

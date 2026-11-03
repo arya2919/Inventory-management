@@ -26,4 +26,4 @@ For another host, set `NODE_ENV=production`, provide a long random `SESSION_SECR
 - No password recovery, stock movement ledger, imports, integrations, warehouses, orders, or billing.
 - SQLite is a practical demo database, not a multi-instance production datastore.
 - The default threshold starts at 5 units and can be changed in Settings. A product-specific threshold overrides it.
-- Price display uses USD for the demo; currency selection is outside this MVP.
+- Price display uses INR for the demo; currency selection is outside this MVP.

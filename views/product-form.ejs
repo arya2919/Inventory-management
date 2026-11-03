@@ -11,8 +11,8 @@
     </div>
     <div class="form-section"><div class="form-section-title"><span class="section-number">02</span><div><strong>Stock & pricing</strong><small>Set the quantity and optional pricing.</small></div></div>
       <div class="form-fields three-fields"><label class="field">Quantity on hand <span class="required-mark">*</span><input type="number" name="quantity" min="0" max="1000000000" step="1" required value="<%= product?.quantity ?? 0 %>"><small>Units currently in stock.</small></label>
-      <label class="field">Cost price <span class="optional-mark">OPTIONAL</span><div class="money-input"><span>$</span><input type="number" name="cost_price" min="0" step="0.01" placeholder="0.00" value="<%= product?.cost_price ?? '' %>"></div></label>
-      <label class="field">Selling price <span class="optional-mark">OPTIONAL</span><div class="money-input"><span>$</span><input type="number" name="selling_price" min="0" step="0.01" placeholder="0.00" value="<%= product?.selling_price ?? '' %>"></div></label>
+      <label class="field">Cost price <span class="optional-mark">OPTIONAL</span><div class="money-input"><span>₹</span><input type="number" name="cost_price" min="0" step="0.01" placeholder="0.00" value="<%= product?.cost_price ?? '' %>"></div></label>
+      <label class="field">Selling price <span class="optional-mark">OPTIONAL</span><div class="money-input"><span>₹</span><input type="number" name="selling_price" min="0" step="0.01" placeholder="0.00" value="<%= product?.selling_price ?? '' %>"></div></label>
       <label class="field">Low stock threshold <span class="optional-mark">OPTIONAL</span><input type="number" name="low_stock_threshold" min="0" max="1000000" step="1" placeholder="Use store default" value="<%= product?.low_stock_threshold ?? '' %>"><small>Leave blank to use the store default.</small></label></div>
     </div>
     <div class="form-actions"><a class="button button-quiet" href="/products">Cancel</a><button class="button button-primary" type="submit"><%= product ? 'Save changes' : 'Add product' %><span>→</span></button></div>
