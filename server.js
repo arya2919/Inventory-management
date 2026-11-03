@@ -10,6 +10,7 @@ const helmet = require('helmet');
 
 const app = express();
 const port = Number(process.env.PORT || 3000);
+if (process.env.NODE_ENV === 'production') app.set('trust proxy', 1);
 const dbPath = process.env.DATABASE_PATH || path.join(__dirname, 'data', 'stockflow.sqlite');
 fs.mkdirSync(path.dirname(dbPath), { recursive: true });
 const db = new Database(dbPath);
