@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: stockflow-inventory
+    runtime: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    disk:
+      name: stockflow-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_PATH
+        value: /var/data/stockflow.sqlite
+      - key: SESSION_SECRET
+        generateValue: true

@@ -1,0 +1,10 @@
+<%- include('partials/head', { title: 'Settings' }) %>
+<div class="app-shell"><%- include('partials/nav', { active }) %><main class="main-area"><%- include('partials/topbar', { section: 'Settings' }) %><div class="page-wrap form-page">
+  <%- include('partials/flash') %>
+  <div class="form-heading"><div class="eyebrow"><span class="eyebrow-line"></span> YOUR WORKSPACE</div><h1>Settings<span class="heading-period">.</span></h1><p class="page-subtitle">A couple of small details to make StockFlow yours.</p></div>
+  <section class="panel settings-panel"><div class="setting-intro"><span class="setting-icon">⌁</span><div><h2>Low stock alerts</h2><p>Choose when a product needs your attention.</p></div></div>
+    <form method="post" action="/settings" class="setting-form"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><label class="field">Default low stock threshold<input type="number" name="default_threshold" min="0" max="1000000" step="1" required value="<%= organization.default_threshold %>"><small>Products without their own threshold will use this value. Anything at or below it appears in your low stock watch.</small></label><div class="setting-save"><span>Changes apply across your catalog.</span><button class="button button-primary" type="submit">Save settings <span>→</span></button></div></form>
+  </section>
+  <section class="panel account-panel"><div class="setting-intro"><span class="setting-icon account-setting-icon">◎</span><div><h2>Account & workspace</h2><p>Your personal workspace details.</p></div></div><div class="account-details"><div><span>WORKSPACE NAME</span><strong><%= organization.name %></strong></div><div><span>OWNER EMAIL</span><strong><%= user.email %></strong></div></div></section>
+  <%- include('partials/foot') %>
+</div></main></div></body></html>

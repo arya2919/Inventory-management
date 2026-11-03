@@ -1,0 +1,15 @@
+<aside class="sidebar">
+  <a class="brand" href="/dashboard"><span class="brand-mark">S</span><span>stockflow<span class="brand-dot">.</span></span></a>
+  <div class="workspace-label">WORKSPACE</div>
+  <div class="workspace-chip"><span class="workspace-icon"><%= (user.organization || 'S').charAt(0).toUpperCase() %></span><span class="workspace-name"><%= user.organization %></span><span class="chevron">⌄</span></div>
+  <div class="nav-label">MENU</div>
+  <nav class="main-nav">
+    <a class="nav-link <%= active === 'dashboard' ? 'active' : '' %>" href="/dashboard"><span class="nav-icon">◫</span>Overview</a>
+    <a class="nav-link <%= active === 'products' ? 'active' : '' %>" href="/products"><span class="nav-icon">▦</span>Products</a>
+    <a class="nav-link <%= active === 'settings' ? 'active' : '' %>" href="/settings"><span class="nav-icon">⚙</span>Settings</a>
+  </nav>
+  <div class="sidebar-bottom">
+    <div class="help-card"><span class="help-icon">✳</span><strong>Everything in stock?</strong><p>Keep your catalog up to date for a clearer view.</p><a href="/products">View products <span>↗</span></a></div>
+    <div class="profile"><span class="avatar"><%= user.email.charAt(0).toUpperCase() %></span><span class="profile-meta"><strong><%= user.email %></strong><small>Owner account</small></span><form action="/logout" method="post"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><button class="logout-icon" title="Log out" aria-label="Log out">↗</button></form></div>
+  </div>
+</aside>
